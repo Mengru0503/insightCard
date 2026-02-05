@@ -10,7 +10,7 @@ export default function MainPage() {
   return (
     <>
       <header>
-        <h1>～認識遊戲～</h1>
+        <h1>認識遊戲</h1>
         <Table />
       </header>
 
