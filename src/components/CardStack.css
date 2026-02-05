@@ -1,0 +1,108 @@
+.card-stack {
+  width: 85px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.card-stack:hover:not(.disabled) {
+  filter: brightness(1.1);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-stack.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  filter: grayscale(50%);
+}
+
+/* Card header with stars and level name */
+.card-header {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-stars {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-level-name {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #2d2416;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 7px;
+  border-radius: 12px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  letter-spacing: 3px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card count badge */
+.card-count {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #2d2416;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 59, 31, 0.3);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+  .card-stack {
+    width: 70px;
+    height: 108px;
+  }
+
+  .card-stars {
+    font-size: 16px;
+  }
+
+  .card-level-name {
+    font-size: 14px;
+    padding: 6px 5px;
+  }
+}

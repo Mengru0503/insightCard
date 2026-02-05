@@ -1,0 +1,176 @@
+.active-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.active-card {
+    position: relative;
+    width: 90%;
+    max-width: 360px;
+    aspect-ratio: 2/3;
+    animation: cardPop 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transform: rotate(-1deg);
+}
+
+.active-card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.active-card-content {
+    width: 100%;
+    height: 100%;
+    background: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+@keyframes cardPop {
+    0% {
+        transform: scale(0.8) rotate(-1deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-1deg);
+    }
+}
+
+/* Card level badge */
+.card-level {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #3e2f16;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+/* Category tag - hide it to avoid duplication */
+.card-category {
+    display: none;
+}
+
+/* Question text */
+.card-text {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #1a1410;
+    text-align: center;
+    margin: 0;
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-shadow:
+        0 2px 4px rgba(255, 255, 255, 0.95),
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 255, 255, 0.6);
+    max-width: 245px;
+    word-wrap: break-word;
+}
+
+/* Close button */
+.close-button {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #3e2f16;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5px;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.65);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.close-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Warning text for sensitive questions */
+.card-warning {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8b7355;
+    text-align: center;
+    padding: 6px 12px;
+    background: rgba(255, 215, 0, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    max-width: 280px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .active-card {
+        max-width: 90%;
+    }
+
+    .active-card-content {
+        padding: 0;
+    }
+
+    .card-text {
+        font-size: 17px;
+        line-height: 1.75;
+        max-width: 220px;
+    }
+
+    .close-button {
+        padding: 10px 28px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,84 @@
+/* ===== Base layout ===== */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang TC", "Noto Sans TC", sans-serif;
+  background: radial-gradient(ellipse at center,
+      #f6e7c8 0%,
+      #e7cfa0 60%,
+      #d6b77c 100%);
+  min-height: 100vh;
+}
+
+/* ===== Page container ===== */
+header {
+  padding: 24px 32px 16px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #4a3b1f;
+}
+
+/* ===== Card stacks row ===== */
+.card-stacks-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Main table area ===== */
+main {
+  height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.table-surface {
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top,
+      #caa56a,
+      #a67c3a);
+  box-shadow:
+    inset 0 8px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.25),
+    0 20px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  header {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .card-stacks-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .table-surface {
+    width: 340px;
+    height: 340px;
+  }
+
+  main {
+    height: auto;
+    min-height: 400px;
+    padding-top: 20px;
+  }
+}
